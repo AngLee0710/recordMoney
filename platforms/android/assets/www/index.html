@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' data: gap: 'unsafe-eval'; style-src * 'self' 'unsafe-inline'; connect-src * ; script-src * 'self' 'unsafe-inline'; media-src *">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <script src="js/utils.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.min.js"></script>
+        <title>Record Money</title>
+    </head>
+    <body onSelectStart="event.returnValue=false">
+        <div id="home" data-role="page">
+            <div role="main" class="ui-content">
+                <div data-role="navbar">
+                  <ul>
+                    <li>
+                      <a id="page_1_btn">支出紀錄</a>
+                    </li>
+                    <li>
+                      <a id="page_2_btn">支出圖表</a>
+                    </li>
+                  </ul>
+                </div>
+                <div id="page_1">
+                    支出:<input type="number" id="cost">
+                    <fieldset data-role="fieldcontain">
+                        <label for="day">類別:</label>
+                        <select id="type">
+                            <option value="Food">食</option>
+                            <option value="Locomotive">車</option>
+                            <option value="Play">玩</option>
+                            <option value="Borrow">借入</option>
+                        </select>
+                    </fieldset>
+                    備註:<input type="text" id="notes">
+                    <a class="ui-btn" id="recordCost">紀錄</a>
+                    <div id="showData">
+                        
+                    </div>
+                </div>
+                <div id="page_2">
+                    I'm page two.
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>
