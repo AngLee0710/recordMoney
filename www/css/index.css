@@ -1,9 +1,10 @@
-#MoneyBox {
-	background-color: #DDDDDD;
-}
 .text {
-	font-size: 28px;
+	font-size: 20px;
 }
 #refreshBtn {
 	float: right;
+}
+
+table {
+	width: 100%;
 }

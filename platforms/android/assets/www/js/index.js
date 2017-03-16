@@ -117,33 +117,172 @@ function clearDataArray() {
 }
 
 function showMoneyBox() {
-    var i,tempDate;
-    var color;
-    for(i = allData.length-1; i > 0 ; i--)
+    var i,j = 0;
+    var color,count = 1;
+
+    var DataLen = allData.length - 1;
+
+    var dayArray = [];
+
+    var tempDate = dataDate[DataLen];
+
+    for(i = DataLen ; i >= 0 ; i--)
     {
-        if(i % 2 == 0)
-            color = 'white';
-        else
-            color = '#DDDDDD';
-        if(tempDate == dataDate[i])
-        {
-            $('#showMoney').append('<div id="MoneyBox" style="background-color:' + color + ';">' +
-                            '<b class="text">時間:</b><span class="text">' + dataTime[i] + '</span><br />' +
-                            '<b class="text">類型:</b><span class="text">' + dataType[i] + '</span><br />' +
-                            '<b class="text">金額:</b><span class="text">' + dataMoney[i] + '</span><br />' +
-                            '<b class="text">備註:</b><span class="text">' + dataNotes[i] + '</span><br />' +
-                            '</div>');
+        if(tempDate == dataDate[i-1])
+            count++;
+        else{
+            tempDate = dataDate[i-1]
+            dayArray[j] = count;
+            count = 1;
+            j++;
         }
-        else
-        {
-            $('#showMoney').append('<div id="MoneyBox" style="background-color:' + color + ';">' +
-                            '<a class="ui-btn text" id="controlBtn">' + dataDate[i] + '</a>' +
-                            '<b class="text">時間:</b><span class="text">' + dataTime[i] + '</span><br />' +
-                            '<b class="text">類型:</b><span class="text">' + dataType[i] + '</span><br />' +
-                            '<b class="text">金額:</b><span class="text">' + dataMoney[i] + '</span><br />' +
-                            '<b class="text">備註:</b><span class="text">' + dataNotes[i] + '</span><br />' +
-                        '</div>');
-        }
-        tempDate = dataDate[i];
     }
+
+    var countArrayLen = dayArray.length - 1;
+
+    for(i = 0 ; i <= countArrayLen ; i++)
+    {
+        switch(dayArray[i]){
+            case 1:
+                append_one(DataLen);
+                break;
+            case 2:
+                append_two(DataLen);
+                break;
+            case 3:
+                append_three(DataLen);
+                break;
+            case 4:
+                append_four(DataLen);
+                break;
+        }
+        DataLen -= dayArray[i];
+    }
+}
+
+function append_one(i) {
+    $('#showMoney').append('<a class="ui-btn text" id="controlBtn">' + dataDate[i] + '</a>' +
+                            '<table>' +
+                                '<thead>' + 
+                                    '<tr>' +
+                                        '<th>時間</th>' +
+                                        '<th>類型</th>' + 
+                                        '<th>金額</th>' + 
+                                        '<th>備註</th>' +
+                                    '</tr>' +
+                                '</thead>' +
+                                '<tbody>' +
+                                    '<tr style="background-color:#DDDDDD;">' +
+                                        '<th><span class="text">' + dataTime[i] + '</span></th>' +
+                                        '<th><span class="text">' + dataType[i] + '</span></th>' +
+                                        '<th><span class="text">' + dataMoney[i] + '</span></th>' +
+                                        '<th><span class="text">' + dataNotes[i] + '</span></th>' +
+                                    '</tr>' +
+                                '</tbody>' +
+                            '</table>');
+}
+
+function append_two(i) {
+    $('#showMoney').append(
+        '<a class="ui-btn text" id="controlBtn">' + dataDate[i] + '</a>' +
+            '<table>' +
+                '<thead>' + 
+                    '<tr>' +
+                        '<th>時間</th>' +
+                        '<th>類型</th>' + 
+                        '<th>金額</th>' + 
+                        '<th>備註</th>' +
+                    '</tr>' +
+                '</thead>' +
+                '<tbody>' +
+                    '<tr style="background-color:#DDDDDD;">' +
+                        '<th><span class="text">' + dataTime[i] + '</span></th>' +
+                        '<th><span class="text">' + dataType[i] + '</span></th>' +
+                        '<th><span class="text">' + dataMoney[i] + '</span></th>' +
+                        '<th><span class="text">' + dataNotes[i] + '</span></th>' +
+                    '</tr>' +
+                    '<tr style="background-color:#DDDDDD;">' +
+                        '<th><span class="text">' + dataTime[i-1] + '</span></th>' +
+                        '<th><span class="text">' + dataType[i-1] + '</span></th>' +
+                        '<th><span class="text">' + dataMoney[i-1] + '</span></th>' +
+                        '<th><span class="text">' + dataNotes[i-1] + '</span></th>' +
+                    '</tr>' +
+                '</tbody>' +
+            '</table>');
+}
+
+function append_three(i) {
+    $('#showMoney').append(
+        '<a class="ui-btn text" id="controlBtn">' + dataDate[i] + '</a>' +
+            '<table>' +
+                '<thead>' + 
+                    '<tr>' +
+                        '<th>時間</th>' +
+                        '<th>類型</th>' + 
+                        '<th>金額</th>' + 
+                        '<th>備註</th>' +
+                    '</tr>' +
+                '</thead>' +
+                '<tbody>' +
+                    '<tr style="background-color:#DDDDDD;">' +
+                        '<th><span class="text">' + dataTime[i] + '</span></th>' +
+                        '<th><span class="text">' + dataType[i] + '</span></th>' +
+                        '<th><span class="text">' + dataMoney[i] + '</span></th>' +
+                        '<th><span class="text">' + dataNotes[i] + '</span></th>' +
+                    '</tr>' +
+                    '<tr style="background-color:#DDDDDD;">' +
+                        '<th><span class="text">' + dataTime[i-1] + '</span></th>' +
+                        '<th><span class="text">' + dataType[i-1] + '</span></th>' +
+                        '<th><span class="text">' + dataMoney[i-1] + '</span></th>' +
+                        '<th><span class="text">' + dataNotes[i-1] + '</span></th>' +
+                    '</tr>' +
+                    '<tr style="background-color:#DDDDDD;">' +
+                        '<th><span class="text">' + dataTime[i-2] + '</span></th>' +
+                        '<th><span class="text">' + dataType[i-2] + '</span></th>' +
+                        '<th><span class="text">' + dataMoney[i-2] + '</span></th>' +
+                        '<th><span class="text">' + dataNotes[i-2] + '</span></th>' +
+                    '</tr>' +
+                '</tbody>' +
+            '</table>');
+}
+
+function append_four(i) {
+    $('#showMoney').append(
+        '<a class="ui-btn text" id="controlBtn">' + dataDate[i] + '</a>' +
+            '<table>' +
+                '<thead>' + 
+                    '<tr>' +
+                        '<th>時間</th>' +
+                        '<th>類型</th>' + 
+                        '<th>金額</th>' + 
+                        '<th>備註</th>' +
+                    '</tr>' +
+                '</thead>' +
+                '<tbody>' +
+                    '<tr style="background-color:#DDDDDD;">' +
+                        '<th><span class="text">' + dataTime[i] + '</span></th>' +
+                        '<th><span class="text">' + dataType[i] + '</span></th>' +
+                        '<th><span class="text">' + dataMoney[i] + '</span></th>' +
+                        '<th><span class="text">' + dataNotes[i] + '</span></th>' +
+                    '</tr>' +
+                    '<tr style="background-color:#DDDDDD;">' +
+                        '<th><span class="text">' + dataTime[i-1] + '</span></th>' +
+                        '<th><span class="text">' + dataType[i-1] + '</span></th>' +
+                        '<th><span class="text">' + dataMoney[i-1] + '</span></th>' +
+                        '<th><span class="text">' + dataNotes[i-1] + '</span></th>' +
+                    '</tr>' +
+                    '<tr style="background-color:#DDDDDD;">' +
+                        '<th><span class="text">' + dataTime[i-2] + '</span></th>' +
+                        '<th><span class="text">' + dataType[i-2] + '</span></th>' +
+                        '<th><span class="text">' + dataMoney[i-2] + '</span></th>' +
+                        '<th><span class="text">' + dataNotes[i-2] + '</span></th>' +
+                    '</tr>' +
+                    '<tr style="background-color:#DDDDDD;">' +
+                        '<th><span class="text">' + dataTime[i-3] + '</span></th>' +
+                        '<th><span class="text">' + dataType[i-3] + '</span></th>' +
+                        '<th><span class="text">' + dataMoney[i-3] + '</span></th>' +
+                        '<th><span class="text">' + dataNotes[i-3] + '</span></th>' +
+                    '</tr>' +
+                '</tbody>' +
+            '</table>');
 }
