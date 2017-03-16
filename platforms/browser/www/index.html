@@ -10,6 +10,7 @@
         <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
         <script src="js/utils.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/index.css">
         <title>Record Money</title>
     </head>
     <body onSelectStart="event.returnValue=false">
@@ -21,29 +22,46 @@
                       <a id="page_1_btn">支出紀錄</a>
                     </li>
                     <li>
-                      <a id="page_2_btn">支出圖表</a>
+                      <a id="page_2_btn">支出清單</a>
                     </li>
                   </ul>
                 </div>
                 <div id="page_1">
                     支出:<input type="number" id="cost">
                     <fieldset data-role="fieldcontain">
+                        <label for="day">收入&amp;支出</label>
+                        <select id="io_money">
+                            <option value="output">支出</option>
+                            <option value="input">收入</option>
+                        </select>
+                    </fieldset>
+                    <fieldset data-role="fieldcontain">
                         <label for="day">類別:</label>
                         <select id="type">
                             <option value="Food">食</option>
                             <option value="Locomotive">車</option>
                             <option value="Play">玩</option>
-                            <option value="Borrow"></option>
+                            <option value="Home">家</option>
                         </select>
                     </fieldset>
-                    備註:<input type="text" id="notes">
+                    備註:<textarea id="notes"></textarea>
                     <a class="ui-btn" id="recordCost">紀錄</a>
                     <div id="showData">
                         
                     </div>
                 </div>
                 <div id="page_2">
-                    I'm page two.
+                    <a href="#link" data-role="button" data-icon="refresh" data-iconpos="notext" id="refreshBtn">refresh</a>
+                    <fieldset data-role="fieldcontain">
+                        <label for="day"><b>收入&amp;支出</b></label>
+                        <select id="io_money">
+                            <option value="output">支出</option>
+                            <option value="input">收入</option>
+                        </select>
+                    </fieldset>
+                    <div id="showMoney">
+
+                    </div>
                 </div>
             </div>
         </div>

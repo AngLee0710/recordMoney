@@ -45,13 +45,15 @@ $('#recordCost').click(function() {
                 $('#showData').show()
                 $('#showData').html('資料上傳成功!!!!!');
             }
-            clearDate();
+            clearData();
     })
 })
 
-$('#controlBtn').click(function(){
-    $('#textBox').slideUp();
+$('#refreshBtn').click(function() {
+    $('#showMoney').html('');
+    clearDataArray();
 })
+
 
 init();
 function init() {
@@ -59,7 +61,7 @@ function init() {
     getchPHPreturn();
 }
 
-function clearDate() {
+function clearData() {
     $('#cost').val('');
     $('#notes').val('');
     $('#showData').delay(1500).hide(1);
@@ -104,25 +106,44 @@ function screeningData() {
 }
 
 //清空陣列
-function clearData() {
+function clearDataArray() {
     dataDate = [];
     dataTime = [];
     dataType = [];
     dataIO = [];
     dataMoney = [];
     dataNotes = [];
+    getchPHPreturn();
 }
 
 function showMoneyBox() {
-    var i;
-    for(i = 0; i < allData.length ; i++)
+    var i,tempDate;
+    var color;
+    for(i = allData.length-1; i > 0 ; i--)
     {
-        $('#showMoney').append('<div id="MoneyBox">' +
-                            '<a class="ui-btn text" id="controlBtn">' + dataDate[i] + '</a>' +
-                            '<div id="textBox"><b class="text">時間:</b><span class="text">' + dataTime[i] + '</span><br />' +
+        if(i % 2 == 0)
+            color = 'white';
+        else
+            color = '#DDDDDD';
+        if(tempDate == dataDate[i])
+        {
+            $('#showMoney').append('<div id="MoneyBox" style="background-color:' + color + ';">' +
+                            '<b class="text">時間:</b><span class="text">' + dataTime[i] + '</span><br />' +
                             '<b class="text">類型:</b><span class="text">' + dataType[i] + '</span><br />' +
                             '<b class="text">金額:</b><span class="text">' + dataMoney[i] + '</span><br />' +
                             '<b class="text">備註:</b><span class="text">' + dataNotes[i] + '</span><br />' +
-                        '</div></div>');
+                            '</div>');
+        }
+        else
+        {
+            $('#showMoney').append('<div id="MoneyBox" style="background-color:' + color + ';">' +
+                            '<a class="ui-btn text" id="controlBtn">' + dataDate[i] + '</a>' +
+                            '<b class="text">時間:</b><span class="text">' + dataTime[i] + '</span><br />' +
+                            '<b class="text">類型:</b><span class="text">' + dataType[i] + '</span><br />' +
+                            '<b class="text">金額:</b><span class="text">' + dataMoney[i] + '</span><br />' +
+                            '<b class="text">備註:</b><span class="text">' + dataNotes[i] + '</span><br />' +
+                        '</div>');
+        }
+        tempDate = dataDate[i];
     }
 }
