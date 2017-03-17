@@ -32,7 +32,7 @@ $('#recordCost').click(function() {
     $.post('http://140.130.35.62/csie40343113/php/recordMoney.php', 
         {
         Name: myName, 
-        input_or_output: $('io_money').val(), 
+        input_or_output: $('#io_money').val(), 
         Money: $('#cost').val(), 
         Type: $('#type').val(), 
         Notes: $('#notes').val()}, 
