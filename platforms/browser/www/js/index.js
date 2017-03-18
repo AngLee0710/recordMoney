@@ -12,17 +12,17 @@ var dataIO = [];
 var dataMoney = [];
 var dataNotes = [];
 
-
+//換頁
 $('#page_1_btn').click(function() {
     $('#page_1').show();
     $('#page_2').hide();
 })
-
+//換頁
 $('#page_2_btn').click(function() {
     $('#page_1').hide();
     $('#page_2').show();
 })
-
+//上傳資料
 $('#recordCost').click(function() {
     if($('#cost').val()==''){
         $('#showData').show()
@@ -48,12 +48,12 @@ $('#recordCost').click(function() {
             clearData();
     })
 })
-
+//點擊refreshBtn執行
 $('#refreshBtn').click(function() {
     $('#showMoney').html('');
     clearDataArrayTogetchPHPreturn();
 })
-
+//如果page2IO改變val執行
 $('#page2IO').change(function () {
     switch($(this).val())
     {
@@ -65,20 +65,19 @@ $('#page2IO').change(function () {
             break;
     }
 })
-
-
+//初始化
 init();
 function init() {
     $('#page_2').hide();
     getchPHPreturn();
 }
-
+//清除輸入框
 function clearData() {
     $('#cost').val('');
     $('#notes').val('');
     $('#showData').delay(1500).hide(1);
 }
-
+//接收資料
 function getchPHPreturn() {
     $.getJSON('http://140.130.35.62/csie40343113/php/showOutput.php',function(data,status){
         allData = data;
@@ -96,6 +95,7 @@ function getchPHPreturn() {
         }
     });
 }
+//篩選收入數據
 function screeningInputData() {
     var i, j=0;
     var temp = [];   
@@ -113,39 +113,38 @@ function screeningInputData() {
     }
     showIncomeBox();
 }
-
+//篩選支出數據
 function screeningOutputData() {
-    var i;
+    var i, j = 0;
     var temp = [];   
     clearDataArray();
     for(i = 0 ; i < allData.length ; i++){
-        dataDate[i] = allData[i].Date;
-        dataTime[i] = allData[i].Time;
-        switch(allData[i].Type){
-            case 'Food':
-                dataType[i] = '吃飯';
-                break;
-            case 'Locomotive':
-                dataType[i] = '機車';
-                break;
-            case 'Play':
-                dataType[i] = '玩';
-                break;
-            case 'Home':
-                dataType[i] = '水電房租相關';
-                break;
-        }
         if(allData[i].input_or_output == 'output')
-            dataIO[i] = '支出';
-        else
-            dataIO[i] = '收入';
-        dataMoney[i] = allData[i].Money;
-        dataNotes[i] = allData[i].Notes;
+        {
+            dataDate[j] = allData[i].Date;
+            dataTime[j] = allData[i].Time;
+            switch(allData[i].Type){
+                case 'Food':
+                    dataType[j] = '吃飯';
+                    break;
+                case 'Locomotive':
+                    dataType[j] = '機車';
+                    break;
+                case 'Play':
+                    dataType[j] = '玩';
+                    break;
+                case 'Home':
+                    dataType[j] = '水電房租相關';
+                    break;
+            }
+            dataMoney[j] = allData[i].Money;
+            dataNotes[j] = allData[i].Notes;
+            j++;
+        }
     }
     showMoneyBox();
 }
-
-//清空陣列
+//清空陣列有使用到getchPHPreturn
 function clearDataArrayTogetchPHPreturn() {
     dataDate = [];
     dataTime = [];
@@ -155,7 +154,7 @@ function clearDataArrayTogetchPHPreturn() {
     dataNotes = [];
     getchPHPreturn();
 }
-
+//清空陣列沒有使用到getchPHPreturn
 function clearDataArray() {
     dataDate = [];
     dataTime = [];
@@ -227,12 +226,11 @@ function showIncomeBox() {
     }
 }
 
-
 function showMoneyBox() {
     var i,j = 0;
     var count = 1;
 
-    var DataLen = allData.length - 1;
+    var DataLen = dataMoney.length - 1;
 
     var dayArray = [];
 
@@ -289,7 +287,8 @@ function showMoneyBox() {
 }
 
 function append_one(i) {
-    $('#showMoney').append('<a class="ui-btn text" id="controlBtn">' + dataDate[i] + '</a>' +
+    $('#showMoney').append(
+        '<a class="ui-btn text" id="controlBtn">' + dataDate[i] + '</a>' +
                             '<table>' +
                                 '<thead>' + 
                                     '<tr>' +

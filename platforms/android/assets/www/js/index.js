@@ -115,32 +115,32 @@ function screeningInputData() {
 }
 //篩選支出數據
 function screeningOutputData() {
-    var i;
+    var i, j = 0;
     var temp = [];   
     clearDataArray();
     for(i = 0 ; i < allData.length ; i++){
-        dataDate[i] = allData[i].Date;
-        dataTime[i] = allData[i].Time;
-        switch(allData[i].Type){
-            case 'Food':
-                dataType[i] = '吃飯';
-                break;
-            case 'Locomotive':
-                dataType[i] = '機車';
-                break;
-            case 'Play':
-                dataType[i] = '玩';
-                break;
-            case 'Home':
-                dataType[i] = '水電房租相關';
-                break;
-        }
         if(allData[i].input_or_output == 'output')
-            dataIO[i] = '支出';
-        else
-            dataIO[i] = '收入';
-        dataMoney[i] = allData[i].Money;
-        dataNotes[i] = allData[i].Notes;
+        {
+            dataDate[j] = allData[i].Date;
+            dataTime[j] = allData[i].Time;
+            switch(allData[i].Type){
+                case 'Food':
+                    dataType[j] = '吃飯';
+                    break;
+                case 'Locomotive':
+                    dataType[j] = '機車';
+                    break;
+                case 'Play':
+                    dataType[j] = '玩';
+                    break;
+                case 'Home':
+                    dataType[j] = '水電房租相關';
+                    break;
+            }
+            dataMoney[j] = allData[i].Money;
+            dataNotes[j] = allData[i].Notes;
+            j++;
+        }
     }
     showMoneyBox();
 }
@@ -230,7 +230,7 @@ function showMoneyBox() {
     var i,j = 0;
     var count = 1;
 
-    var DataLen = allData.length - 1;
+    var DataLen = dataMoney.length - 1;
 
     var dayArray = [];
 
