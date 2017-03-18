@@ -155,6 +155,24 @@ function showMoneyBox() {
             case 4:
                 append_four(DataLen);
                 break;
+            case 5:
+                append_five(DataLen);
+                break;
+            case 6:
+                append_six(DataLen);
+                break;
+            case 7:
+                append_seven(DataLen);
+                break;
+            case 8:
+                append_eight(DataLen);
+                break;
+            case 9:
+                append_nine(DataLen);
+                break;
+            case 10:
+                append_ten(DataLen);
+                break;
         }
         DataLen -= dayArray[i];
     }
@@ -282,6 +300,378 @@ function append_four(i) {
                         '<th><span class="text">' + dataType[i-3] + '</span></th>' +
                         '<th><span class="text">' + dataMoney[i-3] + '</span></th>' +
                         '<th><span class="text">' + dataNotes[i-3] + '</span></th>' +
+                    '</tr>' +
+                '</tbody>' +
+            '</table>');
+}
+
+function append_five(i) {
+    $('#showMoney').append(
+        '<a class="ui-btn text" id="controlBtn">' + dataDate[i] + '</a>' +
+            '<table>' +
+                '<thead>' + 
+                    '<tr>' +
+                        '<th>時間</th>' +
+                        '<th>類型</th>' + 
+                        '<th>金額</th>' + 
+                        '<th>備註</th>' +
+                    '</tr>' +
+                '</thead>' +
+                '<tbody>' +
+                    '<tr style="background-color:#DDDDDD;">' +
+                        '<th><span class="text">' + dataTime[i] + '</span></th>' +
+                        '<th><span class="text">' + dataType[i] + '</span></th>' +
+                        '<th><span class="text">' + dataMoney[i] + '</span></th>' +
+                        '<th><span class="text">' + dataNotes[i] + '</span></th>' +
+                    '</tr>' +
+                    '<tr style="background-color:#DDDDDD;">' +
+                        '<th><span class="text">' + dataTime[i-1] + '</span></th>' +
+                        '<th><span class="text">' + dataType[i-1] + '</span></th>' +
+                        '<th><span class="text">' + dataMoney[i-1] + '</span></th>' +
+                        '<th><span class="text">' + dataNotes[i-1] + '</span></th>' +
+                    '</tr>' +
+                    '<tr style="background-color:#DDDDDD;">' +
+                        '<th><span class="text">' + dataTime[i-2] + '</span></th>' +
+                        '<th><span class="text">' + dataType[i-2] + '</span></th>' +
+                        '<th><span class="text">' + dataMoney[i-2] + '</span></th>' +
+                        '<th><span class="text">' + dataNotes[i-2] + '</span></th>' +
+                    '</tr>' +
+                    '<tr style="background-color:#DDDDDD;">' +
+                        '<th><span class="text">' + dataTime[i-3] + '</span></th>' +
+                        '<th><span class="text">' + dataType[i-3] + '</span></th>' +
+                        '<th><span class="text">' + dataMoney[i-3] + '</span></th>' +
+                        '<th><span class="text">' + dataNotes[i-3] + '</span></th>' +
+                    '</tr>' +
+                    '<tr style="background-color:#DDDDDD;">' +
+                        '<th><span class="text">' + dataTime[i-4] + '</span></th>' +
+                        '<th><span class="text">' + dataType[i-4] + '</span></th>' +
+                        '<th><span class="text">' + dataMoney[i-4] + '</span></th>' +
+                        '<th><span class="text">' + dataNotes[i-4] + '</span></th>' +
+                    '</tr>' +
+                '</tbody>' +
+            '</table>');
+}
+
+function append_six(i) {
+    $('#showMoney').append(
+        '<a class="ui-btn text" id="controlBtn">' + dataDate[i] + '</a>' +
+            '<table>' +
+                '<thead>' + 
+                    '<tr>' +
+                        '<th>時間</th>' +
+                        '<th>類型</th>' + 
+                        '<th>金額</th>' + 
+                        '<th>備註</th>' +
+                    '</tr>' +
+                '</thead>' +
+                '<tbody>' +
+                    '<tr style="background-color:#DDDDDD;">' +
+                        '<th><span class="text">' + dataTime[i] + '</span></th>' +
+                        '<th><span class="text">' + dataType[i] + '</span></th>' +
+                        '<th><span class="text">' + dataMoney[i] + '</span></th>' +
+                        '<th><span class="text">' + dataNotes[i] + '</span></th>' +
+                    '</tr>' +
+                    '<tr style="background-color:#DDDDDD;">' +
+                        '<th><span class="text">' + dataTime[i-1] + '</span></th>' +
+                        '<th><span class="text">' + dataType[i-1] + '</span></th>' +
+                        '<th><span class="text">' + dataMoney[i-1] + '</span></th>' +
+                        '<th><span class="text">' + dataNotes[i-1] + '</span></th>' +
+                    '</tr>' +
+                    '<tr style="background-color:#DDDDDD;">' +
+                        '<th><span class="text">' + dataTime[i-2] + '</span></th>' +
+                        '<th><span class="text">' + dataType[i-2] + '</span></th>' +
+                        '<th><span class="text">' + dataMoney[i-2] + '</span></th>' +
+                        '<th><span class="text">' + dataNotes[i-2] + '</span></th>' +
+                    '</tr>' +
+                    '<tr style="background-color:#DDDDDD;">' +
+                        '<th><span class="text">' + dataTime[i-3] + '</span></th>' +
+                        '<th><span class="text">' + dataType[i-3] + '</span></th>' +
+                        '<th><span class="text">' + dataMoney[i-3] + '</span></th>' +
+                        '<th><span class="text">' + dataNotes[i-3] + '</span></th>' +
+                    '</tr>' +
+                    '<tr style="background-color:#DDDDDD;">' +
+                        '<th><span class="text">' + dataTime[i-4] + '</span></th>' +
+                        '<th><span class="text">' + dataType[i-4] + '</span></th>' +
+                        '<th><span class="text">' + dataMoney[i-4] + '</span></th>' +
+                        '<th><span class="text">' + dataNotes[i-4] + '</span></th>' +
+                    '</tr>' +
+                    '<tr style="background-color:#DDDDDD;">' +
+                        '<th><span class="text">' + dataTime[i-5] + '</span></th>' +
+                        '<th><span class="text">' + dataType[i-5] + '</span></th>' +
+                        '<th><span class="text">' + dataMoney[i-5] + '</span></th>' +
+                        '<th><span class="text">' + dataNotes[i-5] + '</span></th>' +
+                    '</tr>' +
+                '</tbody>' +
+            '</table>');
+}
+
+function append_seven(i) {
+    $('#showMoney').append(
+        '<a class="ui-btn text" id="controlBtn">' + dataDate[i] + '</a>' +
+            '<table>' +
+                '<thead>' + 
+                    '<tr>' +
+                        '<th>時間</th>' +
+                        '<th>類型</th>' + 
+                        '<th>金額</th>' + 
+                        '<th>備註</th>' +
+                    '</tr>' +
+                '</thead>' +
+                '<tbody>' +
+                    '<tr style="background-color:#DDDDDD;">' +
+                        '<th><span class="text">' + dataTime[i] + '</span></th>' +
+                        '<th><span class="text">' + dataType[i] + '</span></th>' +
+                        '<th><span class="text">' + dataMoney[i] + '</span></th>' +
+                        '<th><span class="text">' + dataNotes[i] + '</span></th>' +
+                    '</tr>' +
+                    '<tr style="background-color:#DDDDDD;">' +
+                        '<th><span class="text">' + dataTime[i-1] + '</span></th>' +
+                        '<th><span class="text">' + dataType[i-1] + '</span></th>' +
+                        '<th><span class="text">' + dataMoney[i-1] + '</span></th>' +
+                        '<th><span class="text">' + dataNotes[i-1] + '</span></th>' +
+                    '</tr>' +
+                    '<tr style="background-color:#DDDDDD;">' +
+                        '<th><span class="text">' + dataTime[i-2] + '</span></th>' +
+                        '<th><span class="text">' + dataType[i-2] + '</span></th>' +
+                        '<th><span class="text">' + dataMoney[i-2] + '</span></th>' +
+                        '<th><span class="text">' + dataNotes[i-2] + '</span></th>' +
+                    '</tr>' +
+                    '<tr style="background-color:#DDDDDD;">' +
+                        '<th><span class="text">' + dataTime[i-3] + '</span></th>' +
+                        '<th><span class="text">' + dataType[i-3] + '</span></th>' +
+                        '<th><span class="text">' + dataMoney[i-3] + '</span></th>' +
+                        '<th><span class="text">' + dataNotes[i-3] + '</span></th>' +
+                    '</tr>' +
+                    '<tr style="background-color:#DDDDDD;">' +
+                        '<th><span class="text">' + dataTime[i-4] + '</span></th>' +
+                        '<th><span class="text">' + dataType[i-4] + '</span></th>' +
+                        '<th><span class="text">' + dataMoney[i-4] + '</span></th>' +
+                        '<th><span class="text">' + dataNotes[i-4] + '</span></th>' +
+                    '</tr>' +
+                    '<tr style="background-color:#DDDDDD;">' +
+                        '<th><span class="text">' + dataTime[i-5] + '</span></th>' +
+                        '<th><span class="text">' + dataType[i-5] + '</span></th>' +
+                        '<th><span class="text">' + dataMoney[i-5] + '</span></th>' +
+                        '<th><span class="text">' + dataNotes[i-5] + '</span></th>' +
+                    '</tr>' +
+                    '<tr style="background-color:#DDDDDD;">' +
+                        '<th><span class="text">' + dataTime[i-6] + '</span></th>' +
+                        '<th><span class="text">' + dataType[i-6] + '</span></th>' +
+                        '<th><span class="text">' + dataMoney[i-6] + '</span></th>' +
+                        '<th><span class="text">' + dataNotes[i-6] + '</span></th>' +
+                    '</tr>' +
+                '</tbody>' +
+            '</table>');
+}
+
+function append_eight(i) {
+    $('#showMoney').append(
+        '<a class="ui-btn text" id="controlBtn">' + dataDate[i] + '</a>' +
+            '<table>' +
+                '<thead>' + 
+                    '<tr>' +
+                        '<th>時間</th>' +
+                        '<th>類型</th>' + 
+                        '<th>金額</th>' + 
+                        '<th>備註</th>' +
+                    '</tr>' +
+                '</thead>' +
+                '<tbody>' +
+                    '<tr style="background-color:#DDDDDD;">' +
+                        '<th><span class="text">' + dataTime[i] + '</span></th>' +
+                        '<th><span class="text">' + dataType[i] + '</span></th>' +
+                        '<th><span class="text">' + dataMoney[i] + '</span></th>' +
+                        '<th><span class="text">' + dataNotes[i] + '</span></th>' +
+                    '</tr>' +
+                    '<tr style="background-color:#DDDDDD;">' +
+                        '<th><span class="text">' + dataTime[i-1] + '</span></th>' +
+                        '<th><span class="text">' + dataType[i-1] + '</span></th>' +
+                        '<th><span class="text">' + dataMoney[i-1] + '</span></th>' +
+                        '<th><span class="text">' + dataNotes[i-1] + '</span></th>' +
+                    '</tr>' +
+                    '<tr style="background-color:#DDDDDD;">' +
+                        '<th><span class="text">' + dataTime[i-2] + '</span></th>' +
+                        '<th><span class="text">' + dataType[i-2] + '</span></th>' +
+                        '<th><span class="text">' + dataMoney[i-2] + '</span></th>' +
+                        '<th><span class="text">' + dataNotes[i-2] + '</span></th>' +
+                    '</tr>' +
+                    '<tr style="background-color:#DDDDDD;">' +
+                        '<th><span class="text">' + dataTime[i-3] + '</span></th>' +
+                        '<th><span class="text">' + dataType[i-3] + '</span></th>' +
+                        '<th><span class="text">' + dataMoney[i-3] + '</span></th>' +
+                        '<th><span class="text">' + dataNotes[i-3] + '</span></th>' +
+                    '</tr>' +
+                    '<tr style="background-color:#DDDDDD;">' +
+                        '<th><span class="text">' + dataTime[i-4] + '</span></th>' +
+                        '<th><span class="text">' + dataType[i-4] + '</span></th>' +
+                        '<th><span class="text">' + dataMoney[i-4] + '</span></th>' +
+                        '<th><span class="text">' + dataNotes[i-4] + '</span></th>' +
+                    '</tr>' +
+                    '<tr style="background-color:#DDDDDD;">' +
+                        '<th><span class="text">' + dataTime[i-5] + '</span></th>' +
+                        '<th><span class="text">' + dataType[i-5] + '</span></th>' +
+                        '<th><span class="text">' + dataMoney[i-5] + '</span></th>' +
+                        '<th><span class="text">' + dataNotes[i-5] + '</span></th>' +
+                    '</tr>' +
+                    '<tr style="background-color:#DDDDDD;">' +
+                        '<th><span class="text">' + dataTime[i-6] + '</span></th>' +
+                        '<th><span class="text">' + dataType[i-6] + '</span></th>' +
+                        '<th><span class="text">' + dataMoney[i-6] + '</span></th>' +
+                        '<th><span class="text">' + dataNotes[i-6] + '</span></th>' +
+                    '</tr>' +
+                    '<tr style="background-color:#DDDDDD;">' +
+                        '<th><span class="text">' + dataTime[i-7] + '</span></th>' +
+                        '<th><span class="text">' + dataType[i-7] + '</span></th>' +
+                        '<th><span class="text">' + dataMoney[i-7] + '</span></th>' +
+                        '<th><span class="text">' + dataNotes[i-7] + '</span></th>' +
+                    '</tr>' +
+                '</tbody>' +
+            '</table>');
+}
+
+function append_nine(i) {
+    $('#showMoney').append(
+        '<a class="ui-btn text" id="controlBtn">' + dataDate[i] + '</a>' +
+            '<table>' +
+                '<thead>' + 
+                    '<tr>' +
+                        '<th>時間</th>' +
+                        '<th>類型</th>' + 
+                        '<th>金額</th>' + 
+                        '<th>備註</th>' +
+                    '</tr>' +
+                '</thead>' +
+                '<tbody>' +
+                    '<tr style="background-color:#DDDDDD;">' +
+                        '<th><span class="text">' + dataTime[i] + '</span></th>' +
+                        '<th><span class="text">' + dataType[i] + '</span></th>' +
+                        '<th><span class="text">' + dataMoney[i] + '</span></th>' +
+                        '<th><span class="text">' + dataNotes[i] + '</span></th>' +
+                    '</tr>' +
+                    '<tr style="background-color:#DDDDDD;">' +
+                        '<th><span class="text">' + dataTime[i-1] + '</span></th>' +
+                        '<th><span class="text">' + dataType[i-1] + '</span></th>' +
+                        '<th><span class="text">' + dataMoney[i-1] + '</span></th>' +
+                        '<th><span class="text">' + dataNotes[i-1] + '</span></th>' +
+                    '</tr>' +
+                    '<tr style="background-color:#DDDDDD;">' +
+                        '<th><span class="text">' + dataTime[i-2] + '</span></th>' +
+                        '<th><span class="text">' + dataType[i-2] + '</span></th>' +
+                        '<th><span class="text">' + dataMoney[i-2] + '</span></th>' +
+                        '<th><span class="text">' + dataNotes[i-2] + '</span></th>' +
+                    '</tr>' +
+                    '<tr style="background-color:#DDDDDD;">' +
+                        '<th><span class="text">' + dataTime[i-3] + '</span></th>' +
+                        '<th><span class="text">' + dataType[i-3] + '</span></th>' +
+                        '<th><span class="text">' + dataMoney[i-3] + '</span></th>' +
+                        '<th><span class="text">' + dataNotes[i-3] + '</span></th>' +
+                    '</tr>' +
+                    '<tr style="background-color:#DDDDDD;">' +
+                        '<th><span class="text">' + dataTime[i-4] + '</span></th>' +
+                        '<th><span class="text">' + dataType[i-4] + '</span></th>' +
+                        '<th><span class="text">' + dataMoney[i-4] + '</span></th>' +
+                        '<th><span class="text">' + dataNotes[i-4] + '</span></th>' +
+                    '</tr>' +
+                    '<tr style="background-color:#DDDDDD;">' +
+                        '<th><span class="text">' + dataTime[i-5] + '</span></th>' +
+                        '<th><span class="text">' + dataType[i-5] + '</span></th>' +
+                        '<th><span class="text">' + dataMoney[i-5] + '</span></th>' +
+                        '<th><span class="text">' + dataNotes[i-5] + '</span></th>' +
+                    '</tr>' +
+                    '<tr style="background-color:#DDDDDD;">' +
+                        '<th><span class="text">' + dataTime[i-6] + '</span></th>' +
+                        '<th><span class="text">' + dataType[i-6] + '</span></th>' +
+                        '<th><span class="text">' + dataMoney[i-6] + '</span></th>' +
+                        '<th><span class="text">' + dataNotes[i-6] + '</span></th>' +
+                    '</tr>' +
+                    '<tr style="background-color:#DDDDDD;">' +
+                        '<th><span class="text">' + dataTime[i-7] + '</span></th>' +
+                        '<th><span class="text">' + dataType[i-7] + '</span></th>' +
+                        '<th><span class="text">' + dataMoney[i-7] + '</span></th>' +
+                        '<th><span class="text">' + dataNotes[i-7] + '</span></th>' +
+                    '</tr>' +
+                    '<tr style="background-color:#DDDDDD;">' +
+                        '<th><span class="text">' + dataTime[i-8] + '</span></th>' +
+                        '<th><span class="text">' + dataType[i-8] + '</span></th>' +
+                        '<th><span class="text">' + dataMoney[i-8] + '</span></th>' +
+                        '<th><span class="text">' + dataNotes[i-8] + '</span></th>' +
+                    '</tr>' +
+                '</tbody>' +
+            '</table>');
+}
+
+function append_ten(i) {
+    $('#showMoney').append(
+        '<a class="ui-btn text" id="controlBtn">' + dataDate[i] + '</a>' +
+            '<table>' +
+                '<thead>' + 
+                    '<tr>' +
+                        '<th>時間</th>' +
+                        '<th>類型</th>' + 
+                        '<th>金額</th>' + 
+                        '<th>備註</th>' +
+                    '</tr>' +
+                '</thead>' +
+                '<tbody>' +
+                    '<tr style="background-color:#DDDDDD;">' +
+                        '<th><span class="text">' + dataTime[i] + '</span></th>' +
+                        '<th><span class="text">' + dataType[i] + '</span></th>' +
+                        '<th><span class="text">' + dataMoney[i] + '</span></th>' +
+                        '<th><span class="text">' + dataNotes[i] + '</span></th>' +
+                    '</tr>' +
+                    '<tr style="background-color:#DDDDDD;">' +
+                        '<th><span class="text">' + dataTime[i-1] + '</span></th>' +
+                        '<th><span class="text">' + dataType[i-1] + '</span></th>' +
+                        '<th><span class="text">' + dataMoney[i-1] + '</span></th>' +
+                        '<th><span class="text">' + dataNotes[i-1] + '</span></th>' +
+                    '</tr>' +
+                    '<tr style="background-color:#DDDDDD;">' +
+                        '<th><span class="text">' + dataTime[i-2] + '</span></th>' +
+                        '<th><span class="text">' + dataType[i-2] + '</span></th>' +
+                        '<th><span class="text">' + dataMoney[i-2] + '</span></th>' +
+                        '<th><span class="text">' + dataNotes[i-2] + '</span></th>' +
+                    '</tr>' +
+                    '<tr style="background-color:#DDDDDD;">' +
+                        '<th><span class="text">' + dataTime[i-3] + '</span></th>' +
+                        '<th><span class="text">' + dataType[i-3] + '</span></th>' +
+                        '<th><span class="text">' + dataMoney[i-3] + '</span></th>' +
+                        '<th><span class="text">' + dataNotes[i-3] + '</span></th>' +
+                    '</tr>' +
+                    '<tr style="background-color:#DDDDDD;">' +
+                        '<th><span class="text">' + dataTime[i-4] + '</span></th>' +
+                        '<th><span class="text">' + dataType[i-4] + '</span></th>' +
+                        '<th><span class="text">' + dataMoney[i-4] + '</span></th>' +
+                        '<th><span class="text">' + dataNotes[i-4] + '</span></th>' +
+                    '</tr>' +
+                    '<tr style="background-color:#DDDDDD;">' +
+                        '<th><span class="text">' + dataTime[i-5] + '</span></th>' +
+                        '<th><span class="text">' + dataType[i-5] + '</span></th>' +
+                        '<th><span class="text">' + dataMoney[i-5] + '</span></th>' +
+                        '<th><span class="text">' + dataNotes[i-5] + '</span></th>' +
+                    '</tr>' +
+                    '<tr style="background-color:#DDDDDD;">' +
+                        '<th><span class="text">' + dataTime[i-6] + '</span></th>' +
+                        '<th><span class="text">' + dataType[i-6] + '</span></th>' +
+                        '<th><span class="text">' + dataMoney[i-6] + '</span></th>' +
+                        '<th><span class="text">' + dataNotes[i-6] + '</span></th>' +
+                    '</tr>' +
+                    '<tr style="background-color:#DDDDDD;">' +
+                        '<th><span class="text">' + dataTime[i-7] + '</span></th>' +
+                        '<th><span class="text">' + dataType[i-7] + '</span></th>' +
+                        '<th><span class="text">' + dataMoney[i-7] + '</span></th>' +
+                        '<th><span class="text">' + dataNotes[i-7] + '</span></th>' +
+                    '</tr>' +
+                    '<tr style="background-color:#DDDDDD;">' +
+                        '<th><span class="text">' + dataTime[i-8] + '</span></th>' +
+                        '<th><span class="text">' + dataType[i-8] + '</span></th>' +
+                        '<th><span class="text">' + dataMoney[i-8] + '</span></th>' +
+                        '<th><span class="text">' + dataNotes[i-8] + '</span></th>' +
+                    '</tr>' +
+                    '<tr style="background-color:#DDDDDD;">' +
+                        '<th><span class="text">' + dataTime[i-9] + '</span></th>' +
+                        '<th><span class="text">' + dataType[i-9] + '</span></th>' +
+                        '<th><span class="text">' + dataMoney[i-9] + '</span></th>' +
+                        '<th><span class="text">' + dataNotes[i-9] + '</span></th>' +
                     '</tr>' +
                 '</tbody>' +
             '</table>');
