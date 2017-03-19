@@ -88,9 +88,10 @@ function init() {
     $('#selectTypeInput').hide();
 }
 function addtion(cost) {
-    var costCount = $('showDayCost').val();
-    costCount += cost;
-    $('showDayCost').val(costCount);
+    var costCount = $('#dayCost').html();
+    costCount = parseInt(costCount) + cost;
+    $('#dayCost').html(costCount);
+    console.log(costCount);
 }
 //顯示今日花費
 function showDayCost() {
