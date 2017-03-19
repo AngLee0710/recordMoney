@@ -24,6 +24,7 @@ $('#page_2_btn').click(function() {
 })
 //上傳資料
 $('#recordCost').click(function() {
+    var cost = $('#cost').val();
     if($('#cost').val()==''){
         $('#showData').show()
         $('#showData').html('金額不可空格!!!!!!');
@@ -46,6 +47,7 @@ $('#recordCost').click(function() {
                 $('#showData').html('資料上傳成功!!!!!');
             }
             clearData();
+            addtion(cost);
     })
 })
 //點擊refreshBtn執行
@@ -65,11 +67,48 @@ $('#page2IO').change(function () {
             break;
     }
 })
+
+$('#page1IO').change(function() {
+    switch($(this).val()){
+        case 'output':
+            $('#selectTypeInput').hide();
+            $('#selectTypeOutput').show();
+            break;
+        case 'input':
+            $('#selectTypeInput').show();
+            $('#selectTypeOutput').hide();
+            break;
+    }
+})
 //初始化
 init();
 function init() {
     $('#page_2').hide();
     getchPHPreturn();
+    $('#selectTypeInput').hide();
+}
+function addtion(cost) {
+    var costCount = $('showDayCost').val();
+    costCount += cost;
+    $('showDayCost').val(costCount);
+}
+//顯示今日花費
+function showDayCost() {
+    var date = new Date();
+    var day = date.getDate();
+    var month = date.getMonth() + 1;
+    var year = date.getFullYear();
+    if(month / 10 != 1)
+        var today = year + '-0' + month + '-' + day;
+    else
+        var today = '"' + year + '-' + month + '-' + day + '"';
+    var count = 0;
+    for(var i = 0 ; i < dataDate.length ; i++)
+    {
+        if(today == dataDate[i])
+            count += parseInt(dataMoney[i]);
+    }
+    $('#dayCost').html(count);
 }
 //清除輸入框
 function clearData() {
@@ -106,11 +145,21 @@ function screeningInputData() {
             dataDate[j] = allData[i].Date;
             dataTime[j] = allData[i].Time;
             dataType[j] = allData[i].Type;
+            switch(dataType[j])
+            {
+                case 'mother':
+                    dataType[j] = '零用錢';
+                    break;
+                case 'work':
+                    dataType[j] = '打工薪水';
+                    break;
+            }
             dataMoney[j] = allData[i].Money;
             dataNotes[j] = allData[i].Notes;
-            j++
+            j++;
         }
     }
+    showDayCost();
     showIncomeBox();
 }
 //篩選支出數據
@@ -142,6 +191,7 @@ function screeningOutputData() {
             j++;
         }
     }
+    showDayCost();
     showMoneyBox();
 }
 //清空陣列有使用到getchPHPreturn
