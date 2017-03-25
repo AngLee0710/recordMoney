@@ -30,12 +30,19 @@ $('#recordCost').click(function() {
         $('#showData').html('金額不可空格!!!!!!');
         return;
     }
+    var type = $('#page1IO').val();
+
+    if(type == 'input')
+        type = $('#inputType').val();
+    else
+        type = $('#outputType').val();
+
     $.post('http://140.130.35.62/csie40343113/php/recordMoney.php', 
         {
         Name: myName, 
         input_or_output: $('#page1IO').val(), 
         Money: $('#cost').val(), 
-        Type: $('#type').val(), 
+        Type: type,
         Notes: $('#notes').val()}, 
         function(result) {
             if(result == 'fail'){
@@ -47,7 +54,8 @@ $('#recordCost').click(function() {
                 $('#showData').html('資料上傳成功!!!!!');
             }
             clearData();
-            addtion(cost);
+            if($('#page1IO').val() == 'output')
+                addtion(cost);
     })
 })
 //點擊refreshBtn執行
@@ -87,9 +95,10 @@ function init() {
     getchPHPreturn();
     $('#selectTypeInput').hide();
 }
+//做加法
 function addtion(cost) {
     var costCount = $('#dayCost').html();
-    costCount = parseInt(costCount) + cost;
+    costCount = parseInt(costCount) + parseInt(cost);
     $('#dayCost').html(costCount);
     console.log(costCount);
 }
